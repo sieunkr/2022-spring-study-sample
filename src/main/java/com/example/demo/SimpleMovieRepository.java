@@ -1,6 +1,7 @@
 package com.example.demo;
 
 import lombok.Data;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
@@ -12,15 +13,17 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Repository
+@RequiredArgsConstructor
 public class SimpleMovieRepository implements MovieRepository {
+
+    private final RestTemplate restTemplate;
 
     @Override
     public List<Movie> findByTitle(String title) {
 
-        RestTemplate restTemplate = new RestTemplate();
         HttpHeaders httpHeaders = new HttpHeaders();
-        httpHeaders.add("X-Naver-Client-Id", "-");
-        httpHeaders.add("X-Naver-Client-Secret", "-");
+        httpHeaders.add("X-Naver-Client-Id", "RnUST_xBNVvRRuGbiDkq");
+        httpHeaders.add("X-Naver-Client-Secret", "eI5wkgmJ84");
         String url = "https://openapi.naver.com/v1/search/movie.json" + "?query=" + title;
         return restTemplate.exchange(url, HttpMethod.GET, new HttpEntity(httpHeaders), ResponseMovie.class)
                 .getBody().getItems().stream()
