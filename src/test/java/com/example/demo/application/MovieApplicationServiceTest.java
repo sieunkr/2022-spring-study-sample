@@ -1,11 +1,14 @@
 package com.example.demo;
 
+import com.example.demo.application.MovieApplicationService;
+import com.example.demo.application.MovieDTO;
+import com.example.demo.domain.Movie;
+import com.example.demo.infrastructure.SimpleMovieRepository;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.Mockito;
-import org.mockito.junit.MockitoJUnitRunner;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.Arrays;
@@ -13,6 +16,7 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
+
 
 @ExtendWith(MockitoExtension.class)
 class MovieApplicationServiceTest {
@@ -26,6 +30,7 @@ class MovieApplicationServiceTest {
 
     @Mock
     private SimpleMovieRepository movieRepository;
+
 
     @Test
     @DisplayName("평점 순으로 정렬이 잘 되는지")
@@ -65,8 +70,8 @@ class MovieApplicationServiceTest {
     private List<Movie> getStubMovieList() {
 
         return Arrays.asList(
-                Movie.builder().title("<b>영화1</b> 제목").userRating(9.3f).build(),
-                Movie.builder().title("<b>영화2</b> 제목").userRating(9.7f).build(),
+                Movie.builder().title("<b>반지의제왕1</b> 제목").userRating(9.3f).build(),
+                Movie.builder().title("<b>반지의제왕2</b> 제목").userRating(9.7f).build(),
                 Movie.builder().title("<b>영화3</b> 제목").userRating(0.0f).build(),
                 Movie.builder().title("<b>영화4</b> 제목").userRating(7.5f).build()
         );

@@ -1,5 +1,7 @@
-package com.example.demo;
+package com.example.demo.web;
 
+import com.example.demo.application.MovieDTO;
+import com.example.demo.application.MovieApplicationService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

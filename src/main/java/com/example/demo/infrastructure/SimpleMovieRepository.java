@@ -1,5 +1,7 @@
-package com.example.demo;
+package com.example.demo.infrastructure;
 
+import com.example.demo.domain.Movie;
+import com.example.demo.domain.MovieRepository;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpEntity;
