@@ -1,4 +1,6 @@
-package com.example.demo;
+package com.example.demo.domain;
+
+import com.example.demo.domain.Movie;
 
 import java.util.List;
 

@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import com.example.demo.domain.MovieRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import com.example.demo.domain.Movie;
 import lombok.Builder;
 import lombok.Data;
 
