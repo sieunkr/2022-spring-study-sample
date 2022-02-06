@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.application;
 
 import com.example.demo.domain.Movie;
 import lombok.Builder;

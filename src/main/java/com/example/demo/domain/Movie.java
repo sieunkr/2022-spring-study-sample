@@ -1,16 +1,18 @@
 package com.example.demo.domain;
 
-import lombok.Builder;
-import lombok.Getter;
+import lombok.*;
 
 @Getter
 @Builder
 public class Movie {
 
-    private final String title;
-    private final String link;
-    private final Float userRating;
+    private String title;
+    private String link;
+    private Float userRating;
 
-    
+    public void changeTitle(String title) {
+        this.title = title;
+    }
+
 
 }
